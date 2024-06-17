@@ -1,0 +1,26 @@
+{
+  "name": "episode-2",
+  "version": "1.0.0",
+  "description": "this is react by divyesh patil",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Divyeshpatil2001/namaste-react-tutorial.git"
+  },
+  "keywords": [
+    "react",
+    "js"
+  ],
+  "author": "divyesh patil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Divyeshpatil2001/namaste-react-tutorial/issues"
+  },
+  "homepage": "https://github.com/Divyeshpatil2001/namaste-react-tutorial#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}

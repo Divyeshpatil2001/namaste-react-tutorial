@@ -6,4 +6,54 @@
 
 2 how to use npm in our existing project?
 - npm init
-- 
+- configure things asking in command.
+- help for add lib or package in our project.
+- now in our project package.json created = this file is configuration for npm.
+
+3 why we need package.json ?
+- for maanging all packages.
+- we use lib or pkg that version mnaaged in pkg.json.
+
+4 what is most important package?
+- Bundler = bundles app or package.
+- create react app behind the scene using web pack bundler.
+- we are using parcel bundler = reason(zero-configuration feature, which means that it doesn't require any configuration files to bundle your web app)
+- parcel will ignite our app.
+
+5 how we used parcel in our app?
+- npm install -D parcel.
+- there are two types of dependency: - 1.normal dependency(used in production also)  2. dev dependency(development for developing app)
+
+6 difference between caret and tide in package.json?
+- "parcel": "^2.12.0" = (^)caret
+- "parcel": "~2.12.0" = (~)tide
+- caret means automatic updates the minor version. (2.5 - 2.6 or 2.7)
+- tide means automatic updates the major version.  (2.5 - 3 or 3.5)
+
+7 when we installing package 3 files are there package.json , package-lock.json and node modules.
+difference between package.json and package-lock.json?
+   1.package.json 
+    - track what version of package is installed.   (2.8.3)
+   2. package-lock.json 
+    - keeps track of exact version is installed. (2.8.5)
+   3. what is node modules?
+    - contain all that codes fetch from npm.
+    - its like databases and actual data of those packages.
+
+8 why its more file in the node modules folder ?
+- we install package and then that package is also depend on another packages that is called transitive dependency.
+- example:- install parcel now parcel also need some other package(tell npm install this also i need) and other dependent package need to install for thier. 
+- parcel need babel also. thats npm installing all dependent and needed package for it.
+
+9 how many package.json file in project?
+- not one(1) its so many.
+- in node modules for every package or dependency have separate package.json file.
+- eg - parcel install then in node modules parcel folder having own package.json in which dependent package or needed package is there which install all package by npm. 
+
+10 if i delete node modules how to create?
+- if i have package.json and package-lock.json then i create node_modules  through [npm install].
+
+11 if some thing not to push on github ?
+- create .gitignore file add which file didn't want to push.
+
+
