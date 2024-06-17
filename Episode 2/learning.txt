@@ -1,0 +1,9 @@
+1 what is npm?
+-not node package manager.
+- work as node package manager.
+- its manages the packages.
+- npm is standard repository for all packages.
+
+2 how to use npm in our existing project?
+- npm init
+- 
