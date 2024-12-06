@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import image from "./image.png";
 import "./index.css"
 const Header = () => {
   return (
