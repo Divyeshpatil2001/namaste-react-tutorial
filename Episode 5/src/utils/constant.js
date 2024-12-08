@@ -23,7 +23,7 @@ export const RES_LIST = [
     resimage:
       "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/FOOD_CATALOG/IMAGES/CMS/2024/6/27/c31d6067-a3b0-4d8d-acef-c25aeb4dc418_05cf481e-e52c-4645-8899-80783e9f5fcb.JPG",
     rescuisine: ["Burgers", "wrap", "franky"],
-    resstars: 4.3,
+    resstars: 3.3,
     reseta: 35,
   },
   {
@@ -32,7 +32,7 @@ export const RES_LIST = [
     resimage:
       "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/lln3zxpll8pshaeqrgr9",
     rescuisine: ["Pizza", "coldcoffee"],
-    resstars: 4.5,
+    resstars: 3,
     reseta: 20,
   },
 ];

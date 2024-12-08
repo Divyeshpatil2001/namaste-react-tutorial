@@ -2,3 +2,12 @@ importing function component from different dir => import comp_name from path
 importing var value name from different dir => import {comp_name} from path
 
 in file if one compoent or value var then we can use export default other wise export namee for multiple export
+
+
+in react app data layer and ui layer
+-when data layer is change ui gets change
+-var sync with data and ui layer so we are using for this react hooks state var - usestate
+-using usestae when ever data layer(usestate var) react will re-render that component (change ui layer is change ui sync with data layer)
+
+why react is fast?
+-react is very good at dom operation (dom manipulation)
