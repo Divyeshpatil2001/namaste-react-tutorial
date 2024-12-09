@@ -10,6 +10,7 @@ import RestaurantCard from "./components/RestaurantCard";
 
 
 const AppLayout = () => {
+  console.log(<Body />) // virtual dom
   return (
     <div className="app">
       <Header />
