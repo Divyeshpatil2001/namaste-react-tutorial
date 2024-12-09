@@ -43,7 +43,12 @@ import {useState} from "react"
 
 const Body = () => {
     // local state var - super powerfull var
-    const [listofRestaurants,setListOfRestaurants] = useState(RES_LIST)
+    // const [listofRestaurants,setListOfRestaurants] = useState(RES_LIST)
+    // usestate give arr in which two thing in which first is name and other is setname 
+    // const arr = useState(RES_LIST);
+    // console.log(arr)
+    // const listofRestaurants = arr[0]
+    // const setListOfRestaurants = arr[1]
     return (<div className="body">
         <div className="filter">
             <button className="filter-btn" onClick={() => {
