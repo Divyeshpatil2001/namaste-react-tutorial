@@ -7,7 +7,7 @@ const RestaurantCard = ({ resData }) => {
     costForTwo,
     cloudinaryImageId,
   } = resData.info;
-
+  
   return (
     <div className="res-card">
       <img
