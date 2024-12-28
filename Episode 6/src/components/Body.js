@@ -6,6 +6,7 @@ import Shimmer from "./Shimmer";
 const Body = () => {
     // usestate give arr in which two thing in which first is name and other is setname 
     const [listofRestaurants,setListOfRestaurants] = useState([]);
+    const [filterRestaurants,setFilterRestaurants] = useState([]);
     const [searchRestaurants,setSearchRestaurants] = useState([]);
     // console.log("use 12called")
     // after the components rendered useeffect call back function will called
@@ -28,6 +29,7 @@ const Body = () => {
       
           if (restaurants) {
             setListOfRestaurants(restaurants);
+            setFilterRestaurants(restaurants);
           } else {
             console.error("Failed to fetch restaurants.");
           }
@@ -47,9 +49,9 @@ const Body = () => {
               <input className="search-input" value={searchRestaurants} onChange={(e) => {setSearchRestaurants(e.target.value)}} />
               <button className="search-btn" onClick={
                 () => {
-                  const filteredData = listofRestaurants.filter(res => res.info.name.toLowerCase().includes(searchRestaurants.trim().toLowerCase()))
+                  const filteredData = listofRestaurants.filter(res => res.info.name.toLowerCase().includes(searchRestaurants.toLowerCase()))
                   console.log(filteredData)
-                  setListOfRestaurants(filteredData)
+                  setFilterRestaurants(filteredData)
               }}>Search</button>
             </div>
             <button className="filter-btn" onClick={() => {
@@ -58,7 +60,7 @@ const Body = () => {
             }}>Top Rated Restaurants</button>
         </div>
         <div className="res-container">
-            {listofRestaurants.map(restaurant => (
+            {filterRestaurants.map(restaurant => (
                 <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
             ))}
            
