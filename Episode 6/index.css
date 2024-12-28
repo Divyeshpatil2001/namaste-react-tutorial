@@ -57,3 +57,9 @@
     padding: 0 20px;
     cursor: pointer;
 }
+.filter {
+    display: flex;
+}
+.search-box {
+    margin: 10px;   
+}

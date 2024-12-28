@@ -5,15 +5,16 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
     // usestate give arr in which two thing in which first is name and other is setname 
-    const [listofRestaurants,setListOfRestaurants] = useState([])
+    const [listofRestaurants,setListOfRestaurants] = useState([]);
+    const [searchRestaurants,setSearchRestaurants] = useState([]);
     // console.log("use 12called")
     // after the components rendered useeffect call back function will called
     // loads => app => render components => when api data come then useffect throough shown in ui (better uix) 
     useEffect(() => {
-        console.log("use called")
+        console.log("useffect called")
         fetchData();
-    },[]);
-    // console.log("use 11called")
+    },[]);//first argument is call back function and second argument is dependency array
+    console.log("use 11called")
 
     const fetchData = async () => {
         try {
@@ -42,6 +43,15 @@ const Body = () => {
 
     return listofRestaurants.length == 0 ? <Shimmer /> : (<div className="body">
         <div className="filter">
+            <div className="search-box">
+              <input className="search-input" value={searchRestaurants} onChange={(e) => {setSearchRestaurants(e.target.value)}} />
+              <button className="search-btn" onClick={
+                () => {
+                  const filteredData = listofRestaurants.filter(res => res.info.name.toLowerCase().includes(searchRestaurants.trim().toLowerCase()))
+                  console.log(filteredData)
+                  setListOfRestaurants(filteredData)
+              }}>Search</button>
+            </div>
             <button className="filter-btn" onClick={() => {
                 filtered_list = listofRestaurants.filter(res => res.info.avgRating == 4.2)
                 setListOfRestaurants(filtered_list)
