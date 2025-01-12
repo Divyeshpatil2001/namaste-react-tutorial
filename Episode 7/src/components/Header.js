@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { HEADER_LOGO } from "../utils/constant";
 import { useEffect, useState } from "react";
 
@@ -22,10 +23,12 @@ const Header = () => {
         </div>
         <div className="nav-items">
           <ul>
-              <li>Home</li>
-              <li>About Us</li>
-              <li>Contact Us</li>
-              <li>Cart</li>
+              {/* <a href="/"></a> this getting refresh the whole application  */}
+              {/* using link only hiearachhy change of components not getting whole application reload */}
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/contact">Contact Us</Link></li>
+              <li><Link to="/">Cart</Link></li>
               <button className="login" onClick={() => setBtnName(btnName== "login" ? "logout" : "login")}>{btnName}</button>
           </ul>
         </div>
