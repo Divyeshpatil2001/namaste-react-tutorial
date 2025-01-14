@@ -8,6 +8,7 @@ import { createBrowserRouter,Outlet,RouterProvider } from "react-router-dom";
 import About from "./components/About";
 import Constant from "./components/Contact";
 import Error from "./components/Error";
+import RestaurantMenu from "./components/RestaurantMenu";
 
 // createbrowserrouter = will create routing configuration for us
 // will developing router as approuter andd pass router configuration into createbrowserrouter
@@ -40,6 +41,10 @@ const approuter = createBrowserRouter([
       {
         path: "/contact",
         element: <Constant />
+      },
+      {
+        path: "/restaurants/:resId",
+        element: <RestaurantMenu />
       }
     ],
     errorElement: <Error />

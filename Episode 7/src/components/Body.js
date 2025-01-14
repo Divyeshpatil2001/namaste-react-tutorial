@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import { RES_LIST } from "../utils/constant";
 import {useState,useEffect} from "react"
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
     // usestate give arr in which two thing in which first is name and other is setname 
@@ -61,7 +62,9 @@ const Body = () => {
         </div>
         <div className="res-container">
             {filterRestaurants.map(restaurant => (
-                <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
+              <Link key={restaurant.info.id} to={"/restaurants/"+restaurant.info.id}>
+                <RestaurantCard resData={restaurant}/>
+                </Link>
             ))}
            
         </div>
