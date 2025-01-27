@@ -8,13 +8,17 @@ class UserClass extends React.Component {
         count: 0,
         count2:2,
     }
-    console.log("ddbs")
+    console.log(this.props.name + "child class constructor");
+  }
+
+  componentDidMount() {
+    console.log(this.props.name + "child class did mount");
   }
 
   render() {
     const { name, location } = this.props;
     const { count,count2 } = this.state
-    console.log("ddb11s")
+    console.log(this.props.name + "child class render")
     return (
       <div className="user-card">
         <h1>class component</h1>
@@ -30,9 +34,3 @@ class UserClass extends React.Component {
 }
 
 export default UserClass;
-// note class bases component
-// when we loading a class component on the webpage that means we are creting a new instance of class and giving it some props
-// whenever we create a instance of class constructor is called and this is best place to recieve props and also for create state varaibles.
-// how to create state var - this.state = {count: 0} //this.state holding whole object of all state var
-
-// never update state var using directly(count=count+1) instead do setstate function used.

@@ -1,0 +1,44 @@
+// note class bases component
+- when we loading a class component on the webpage that means we are creting a new instance of class and giving it some props
+- whenever we create a instance of class constructor is called and this is best place to recieve props and also for create state varaibles.
+- how to create state var - this.state = {count: 0} //this.state holding whole object of all state var
+
+- never update state var using directly(count=count+1) instead do setstate function used.
+- The constructor() is a special method in JavaScript classes that gets called when a new instance of the component is created
+- super() calls the constructor of the parent class (React.Component) and initializes the this context for the child class.
+- If you pass props to super, the parent class (React.Component) will properly initialize the props and make them accessible via this.props.
+
+- in class component we extends react.component from react so we can destructing also {component} from react and use extends from component.
+
+// question:
+- how class component mounted/put on to the webpage ?
+-- when class component renders orloads or create instance then firstly constructor is called then render is called 
+- when the componentdidmount will called ?
+-- once the component completed mounted on to the weboage. (constructor-> render -> didmount)
+- if parent & child both having class component with didmount then ?
+-- first parent -> parent constructor -> parent render -> child component called (till now parent component didn't mounted compeleltly)-> child constructor -> child render -> child didmount -> parent didmount.
+- what is mounting ?
+-- when the component is created and inserted into the DOM.
+
+- How DOM Updates Work for Multiple Child Components
+-- Rendering Phase:
+    -- The constructor and render methods of each child are executed one by one in the order they are encountered during the parent's render.
+    -- During each child's render, React creates the virtual DOM representation for that child.
+-- Commit Phase (DOM Update):
+    -- After React has processed the render method for all children, React calculates the changes needed to update the actual DOM based on the virtual DOM it constructed.
+    -- React then applies the DOM updates efficiently in batches rather than updating the DOM one child at a time (this minimizes reflows and improves performance).
+-- Once the DOM is updated for the entire component tree (parent + all children), React executes the componentDidMount lifecycle method for each child sequentially.
+
+- What Is "Batching" in React?
+-- Batching is React's optimization technique where multiple updates to the state or props (that might cause re-renders) are grouped together into a single DOM update instead of processing them one by one. This helps React minimize the number of re-renders and DOM changes, making the application more efficient and faster.
+
+
+- How Does Batching Work?
+-- During the Rendering Phase:
+    -- React collects all the updates (state/props changes) triggered during an event or lifecycle method.
+    -- It updates the virtual DOM (not the real DOM) to reflect all the changes.
+-- During the Commit Phase:
+    -- After React has calculated all the changes to the virtual DOM, it applies those changes to the real DOM in a single step (batch).
+    -- Then, React calls lifecycle methods like componentDidMount and runs side effects.
+
+-- when this.setstate called react triggers render function once again but this time satte var with updated value.
