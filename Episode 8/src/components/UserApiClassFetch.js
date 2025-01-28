@@ -10,8 +10,10 @@ class UserApiClassFetch extends Component {
             avatar_url: "https://testuser.com"
         }
     }
+    console.log("fetch constructor")
   }
   async componentDidMount(){
+    console.log("fetch component did mount")
     const data = await fetch("https://api.github.com/users/Divyeshpatil2001");
     const json = await data.json();
     this.setState({
@@ -19,7 +21,17 @@ class UserApiClassFetch extends Component {
     });
     console.log(json);
   }
+
+  componentDidUpdate () {
+    console.log("fetch update")
+  }
+
+  componentWillUnmount () {
+    console.log("fetch component will unmount")
+  }
+
   render() {
+    console.log("render functions")
     const { name , location, avatar_url } = this.state.userInfo;
     return (
       <div className="user-card">

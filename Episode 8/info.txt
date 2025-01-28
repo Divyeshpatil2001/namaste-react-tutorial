@@ -42,3 +42,21 @@
     -- Then, React calls lifecycle methods like componentDidMount and runs side effects.
 
 -- when this.setstate called react triggers render function once again but this time satte var with updated value.
+
+- how the updating cycle works ?
+-- render called -> dom update -> componentdidupdate
+-- this method is called when the state updated from this.setstate then it trigger render > dom update > didupdate function.
+
+- how the unmounting works ?
+-- componentwillunmount method called
+-- this called when before a component is removed from the DOM => because of this(component goes away or we can go to another component).
+
+- how to anythhing do in unmount phase in functional component ?
+-- useEffect(()=> {
+        const timer = setInterval(() => {
+            console.log("useeffect")
+        }, 1000);
+        // this called when component goes away or remove from dom like unmounting
+        return () => {clearInterval(timer)}
+    },[])
+-- we can do under useeffect return for any unmounting task
