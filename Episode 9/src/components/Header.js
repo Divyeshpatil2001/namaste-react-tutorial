@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { HEADER_LOGO } from "../utils/constant";
 import { useEffect, useState } from "react";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
     const [btnName,setBtnName] = useState("login")
@@ -13,6 +14,7 @@ const Header = () => {
     useEffect(() => {
       console.log("header useeffect");
     },[])
+    const onlineStatus = useOnlineStatus();
     return (
       <div className="header">
         <div className="logo-conatiner">
@@ -23,9 +25,13 @@ const Header = () => {
         </div>
         <div className="nav-items">
           <ul>
+              <li>
+                online status: {onlineStatus ? "🟢" : "🔴"}
+              </li>
               {/* <a href="/"></a> this getting refresh the whole application  */}
               {/* using link only hiearachhy change of components not getting whole application reload */}
               <li><Link to="/">Home</Link></li>
+              <li><Link to="/grocery">Grocery</Link></li>
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/contact">Contact Us</Link></li>
               <li><Link to="/">Cart</Link></li>
