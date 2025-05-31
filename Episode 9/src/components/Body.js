@@ -3,6 +3,7 @@ import { RES_LIST } from "../utils/constant";
 import {useState,useEffect} from "react"
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
     // usestate give arr in which two thing in which first is name and other is setname 
@@ -43,6 +44,13 @@ const Body = () => {
     // if (listofRestaurants.length == 0) {
     //   return <Shimmer />
     // }
+
+    const onlineStatus = useOnlineStatus();
+    if (onlineStatus === false) return (
+      <h1>
+        Looks like you're offline !!! pleasse check your connection
+      </h1>
+    )
 
     return listofRestaurants.length == 0 ? <Shimmer /> : (<div className="body">
         <div className="filter">
