@@ -3,4 +3,6 @@
     "@tailwindcss/postcss": {}
   }
 }
-// using this tool parcel bundler will understand the tailwindcss
+/* using this tool parcel bundler will understand the tailwindcss */
+/* transform css with along js */
+/* postcss need to read css from js tailwind will use */
