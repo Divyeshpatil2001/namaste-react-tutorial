@@ -1,0 +1,4 @@
+* higher order component
+- it is fuunction takes a component & return a component.
+- why we use it - for adding ehnacements or extra featuress & give updated component.
+-  
