@@ -1,11 +1,10 @@
 import { useState } from "react";
 import ItemList from "./ItemList";
 
-const RestaurantCategory = ({ data }) => {
+const RestaurantCategory = ({ data,showIndex,setShowIndex }) => {
   console.log(data);
-  const [show,setShow] = useState(false);
   const handleClick = () => {
-    setShow(!show)
+    setShowIndex();
   }
   // now item list i want to show on click means - its depends upon data layer has state variable.
   // state varaible will decide itemlist will display or not.
@@ -19,7 +18,7 @@ const RestaurantCategory = ({ data }) => {
           <span>⬇️</span>
         </div>
 
-        {show && <ItemList items={data.itemCards} />}
+        {showIndex && <ItemList items={data.itemCards} />}
       </div>
     </div>
   );

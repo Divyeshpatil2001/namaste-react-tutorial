@@ -7,6 +7,7 @@ import RestaurantCategory from "./RestaurantCategory";
 const RestaurantMenu = () => {
   const { resId } = useParams();
   const resInfo = useRestaurantMenu(resId);
+  const [showIndex,setShowIndex] = useState(0);
 
   if (!resInfo) return <Shimmer />;
 
@@ -38,7 +39,7 @@ const RestaurantMenu = () => {
       "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
   );
 
-  console.log("menu::",categories)
+  console.log("menu::", categories);
 
   return (
     <div className="text-center">
@@ -47,8 +48,14 @@ const RestaurantMenu = () => {
         {cuisines?.join(", ")} - {costForTwoMessage}
       </p>
       {/* categories accordian */}
-      {categories.map((category) => (
-        <RestaurantCategory key={category.card.card.title} data={category?.card?.card}/>
+      {/* controlled component */}
+      {categories.map((category, index) => (
+        <RestaurantCategory
+          key={category.card.card.title}
+          data={category?.card?.card}
+          showIndex={showIndex === index && true}
+          setShowIndex={() => setShowIndex(index)}
+        />
       ))}
     </div>
   );
