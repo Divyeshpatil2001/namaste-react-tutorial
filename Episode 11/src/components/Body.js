@@ -1,10 +1,11 @@
 import RestaurantCard from "./RestaurantCard";
 import { RES_LIST } from "../utils/constant";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { WithPromotedLabel } from "./RestaurantCard";
+import UserContext from "../utils/userContext";
 
 const Body = () => {
   // usestate give arr in which two thing in which first is name and other is setname
@@ -64,6 +65,8 @@ const Body = () => {
   if (onlineStatus === false)
     return <h1>Looks like you're offline !!! pleasse check your connection</h1>;
 
+  const {loggedInUser,setUserName} = useContext(UserContext);
+
   return listofRestaurants.length == 0 ? (
     <Shimmer />
   ) : (
@@ -104,6 +107,10 @@ const Body = () => {
           >
             Top Rated Restaurants
           </button>
+        </div>
+        <div className="m-4 p-4 flex items-center">
+          <label>abc :</label>
+          <input className="border border-black p-2" value={loggedInUser} onChange={(e) => setUserName(e.target.value)}/>
         </div>
       </div>
       <div className="flex flex-wrap">

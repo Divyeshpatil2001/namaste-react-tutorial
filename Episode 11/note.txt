@@ -7,3 +7,7 @@
     2. Data layer - major part
 ui layer is powered by data layer
 data layer is consists of state , props , variables or {} this curly braces inside jsx 
+
+* what is props drilling?
+* what is react context?
+* 

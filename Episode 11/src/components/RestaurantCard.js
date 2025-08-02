@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import UserContext from "../utils/userContext";
+
 const RestaurantCard = ({ resData }) => {
   const {
     name,
@@ -8,6 +11,8 @@ const RestaurantCard = ({ resData }) => {
     cloudinaryImageId,
   } = resData.info;
 
+  const {loggedInUser} = useContext(UserContext);
+  console.log(loggedInUser)
   return (
     <div className="m-4 p-4 w-[250px] bg-gray-200 rounded-lg">
       <img
@@ -20,6 +25,9 @@ const RestaurantCard = ({ resData }) => {
       <h4 className="font-boldpy-4 text-lg">{avgRating} stars</h4>
       <h4 className="font-boldpy-4 text-lg">
         Delivery Time: {sla.deliveryTime} mins
+      </h4>
+      <h4 className="font-boldpy-4 text-lg">
+        context data: {loggedInUser} mins
       </h4>
       <h4 className="font-boldpy-4 text-lg">Cost for Two: {costForTwo}</h4>
     </div>

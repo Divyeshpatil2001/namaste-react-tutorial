@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { HEADER_LOGO } from "../utils/constant";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/userContext";
 
 const Header = () => {
     const [btnName,setBtnName] = useState("login")
@@ -15,6 +16,10 @@ const Header = () => {
       console.log("header useeffect");
     },[])
     const onlineStatus = useOnlineStatus();
+
+    const {loggedInUser} = useContext(UserContext);
+    console.log(loggedInUser)
+
     return (
       <div className="flex justify-between bg-blue-50 shadow-lg m-2">
         <div className="logo-conatiner">
@@ -36,6 +41,7 @@ const Header = () => {
               <li className="px-4"><Link to="/contact">Contact Us</Link></li>
               <li className="px-4"><Link to="/">Cart</Link></li>
               <button className="login" onClick={() => setBtnName(btnName== "login" ? "logout" : "login")}>{btnName}</button>
+              <li className="px-4 font-bold"><Link to="/">{loggedInUser}</Link></li>
           </ul>
         </div>
       </div>

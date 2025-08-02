@@ -2,6 +2,7 @@ import {Component} from "react";
 import User from "./User";
 import UserClass from "./UserClass";
 import UserApiClassFetch from "./UserApiClassFetch";
+import UserContext from "../utils/userContext";
 
 class AboutClass extends Component {
     constructor(props) {
@@ -21,6 +22,11 @@ class AboutClass extends Component {
             <div>
             <h1>About class component</h1>
             <h2>this is about page of website</h2>
+            <div>
+                <UserContext.Consumer>
+                    {({loggedInUser}) => <h1 className="font-bold">{loggedInUser}</h1>}
+                </UserContext.Consumer>
+            </div>
             {/* <UserClass name={"nikhil"} location={"classy"}/> */}
             {/* <UserClass name={"divyesh"} location={"classy"}/>
             <UserApiClassFetch /> */}

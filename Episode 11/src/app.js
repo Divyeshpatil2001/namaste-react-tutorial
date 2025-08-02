@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import "../index.css"
 import Header from "./components/Header";
@@ -9,6 +9,8 @@ import { createBrowserRouter,Outlet,RouterProvider } from "react-router-dom";
 import Constant from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
+import AboutClass from "./components/AboutClass";
+import UserContext from "./utils/userContext";
 // import AboutClass from "./components/AboutClass";
 // import Grocery from "./components/Grocery";
 
@@ -27,11 +29,39 @@ const About = lazy(() => import("./components/About"))
 
 const AppLayout = () => {
   console.log(<Body />) // virtual dom
+  const [userName,setUserName] = useState();
+  useEffect(() => {
+    // make a api call with username and password
+    const data = {
+      name : "divyesh patil"
+    }
+    setUserName(data.name);
+  }, [])
+  
   return (
+    // we can set name to differnt component to different name
+    // <UserContext.Provider value={{loggedInUser : userName}}>
+    //   <div className="app">
+    //     <UserContext.Provider value={{loggedInUser : "userName"}}>
+    //       <Header />
+    //     </UserContext.Provider>
+    //     <Outlet />
+    //   </div>
+    // </UserContext.Provider>
+
+  <UserContext.Provider value={{loggedInUser : userName,setUserName}}>
     <div className="app">
       <Header />
       <Outlet />
     </div>
+  </UserContext.Provider>
+// here only on header we are change but in about us page it will deault which already set  
+/* <div className="app">
+      <UserContext.Provider value={{loggedInUser : "userName"}}>
+      <Header />
+</UserContext.Provider>
+      <Outlet />
+    </div> */
   );
 };
 
@@ -47,7 +77,7 @@ const approuter = createBrowserRouter([
       {
         path: "/about",
         element: <Suspense fallback={<h1>Loadinnnggg.....</h1>}>
-          <About />
+          <AboutClass />
         </Suspense>
         // element: <AboutClass />
       },
