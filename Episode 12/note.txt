@@ -1,0 +1,24 @@
+* higher order component
+- it is fuunction takes a component & return a component.
+- why we use it - for adding ehnacements or extra featuress & give updated component.
+
+* all react applications have two layer :
+    1. UI layer - jsx simple
+    2. Data layer - major part
+ui layer is powered by data layer
+data layer is consists of state , props , variables or {} this curly braces inside jsx 
+
+* what is props drilling?
+* what is react context?
+
+* redux toolkit
+- install redux toolkit & react redux
+- build our store
+- connect our store to applications
+- create slice(cart)
+- dispatch a action 
+- useselector
+
+- when user click on button it dispatch a action it wwill call reducer function it wwill modifiy the data of cart slice 
+* how to track data in redux ? 
+- useselector for subscribing from app to store 
