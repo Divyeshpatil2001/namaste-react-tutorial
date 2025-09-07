@@ -13,6 +13,9 @@ import AboutClass from "./components/AboutClass";
 import UserContext from "./utils/userContext";
 // import AboutClass from "./components/AboutClass";
 // import Grocery from "./components/Grocery";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 
 // createbrowserrouter = will create routing configuration for us
 // will developing router as approuter andd pass router configuration into createbrowserrouter
@@ -49,12 +52,15 @@ const AppLayout = () => {
     //   </div>
     // </UserContext.Provider>
 
+  <Provider store={appStore}>
   <UserContext.Provider value={{loggedInUser : userName,setUserName}}>
     <div className="app">
       <Header />
       <Outlet />
     </div>
   </UserContext.Provider>
+  </Provider>
+
 // here only on header we are change but in about us page it will deault which already set  
 /* <div className="app">
       <UserContext.Provider value={{loggedInUser : "userName"}}>
@@ -94,6 +100,10 @@ const approuter = createBrowserRouter([
       {
         path: "/restaurants/:resId",
         element: <RestaurantMenu />
+      },
+      {
+        path: "/cart",
+        element: <Cart />
       }
     ],
     errorElement: <Error />

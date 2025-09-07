@@ -22,3 +22,8 @@ data layer is consists of state , props , variables or {} this curly braces insi
 - when user click on button it dispatch a action it wwill call reducer function it wwill modifiy the data of cart slice 
 * how to track data in redux ? 
 - useselector for subscribing from app to store 
+
+- addItem: (state,action) => {
+            
+        }
+=> additem is a action on this dispatch that function is reducers function
