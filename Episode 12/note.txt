@@ -27,3 +27,12 @@ data layer is consists of state , props , variables or {} this curly braces insi
             
         }
 => additem is a action on this dispatch that function is reducers function
+
+
+// older way vanila js redux => dont mutate the state , returning is mandatory
+      // const newState = {...state};
+      // newState.items = push(action.payload);
+      // return newState;
+
+// behind the scenes redux toolkit uses immer library for doing above steps autoomatically
+// immer library finds the differences between original state and mutating state and gives back a new state
