@@ -3,3 +3,6 @@ dist
 .parcel-cache
 .package-lock.json
 npm-debug.log
+coverage/
+
+

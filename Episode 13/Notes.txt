@@ -1,0 +1,25 @@
+# types of testing (devleoper):
+- unit testing - small unit of app
+- integration testing - many components collabrate to make feature it is integration of so many components this testing 
+-- there are multiple components talking to each other will develop a flow of an react app
+- end to end testing (e2e) - user lands on the webiste to leaves the website will test all the flows
+
+
+# setting up testing in our app
+- install react testing library
+- install jest
+- install babel dependecies 
+- create babel config js file
+- configure parcel config file to disable Babel transpilation
+- jest configuration -- npx jest init 
+- install jsdom library 
+- install @babel/preset-react - to make jsx works in test case
+- include @babel/preset-react - inside my babel config
+- install testing-library/jest-dom - for testinf function (eg:toBeInTheDocument
+)
+
+--- this testing babel might be issue because we have parcel and it is using its own babel 
+--solution -- we have to tell parcel to not use their default babel instead use testing one babel configuration
+-- docs to parcel -> babel -> usage with other tools
+
+- __a__ = dunder method(__ __) first and last underscore
