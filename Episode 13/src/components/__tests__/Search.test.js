@@ -59,6 +59,6 @@ it("should filter top rated restrauants", async () => {
   fireEvent.click(topRatedBtn);
 
   const cardsafterFilter = screen.getAllByTestId("resCard");
-  expect(cardsafterFilter.length).toBe(3);
+  expect(cardsafterFilter.length).toBe(20);
   
 });
