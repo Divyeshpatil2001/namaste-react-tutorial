@@ -29,7 +29,8 @@ const cartSlice = createSlice({
       console.log(state)
       // below is works
 
-      state.items.length = 0;
+      // state.items.length = 0;
+      return { items: [] };
       // redux toolkit says mutating the existing state or returning a new state
       // return { items : [] }; // this will work - because its returning a new state and original state will be replaced by this new state 
     },
