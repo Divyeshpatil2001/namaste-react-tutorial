@@ -74,6 +74,7 @@ const Body = () => {
       <div className="filter flex">
         <div className="search-box m-4 p-4">
           <input
+            data-testid="searchInput"
             className="border border-solid border-black"
             value={searchRestaurants}
             onChange={(e) => {
@@ -99,8 +100,8 @@ const Body = () => {
           <button
             className="px-4 py-2 bg-gray-100"
             onClick={() => {
-              filtered_list = listofRestaurants.filter(
-                (res) => res.info.avgRating == 4.2
+              const filtered_list = listofRestaurants.filter(
+                (res) => res.info.avgRating == 4.6
               );
               setListOfRestaurants(filtered_list);
             }}

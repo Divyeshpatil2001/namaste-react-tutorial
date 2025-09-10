@@ -23,3 +23,20 @@
 -- docs to parcel -> babel -> usage with other tools
 
 - __a__ = dunder method(__ __) first and last underscore
+
+# steps for test case to render component or not and check assertion
+- render
+- querying
+- assertion (expect to this)
+
+-- "watch-test": "jest --watch" - add for continue server running for testng like parcel run like hmrs after saving website update like wise in terms of jsdom envirnoment
+
+// whenwver we use fetch async state update in component then for test case we have to wrap in the act() method
+// act() - helps to make sure all the useEffect and other async code is executed before we do any assertion or testing
+// import { act } from "react-dom/test-utils";
+
+
+// for click - fore event
+// if dont know role or text so we can check using getbytestid just in element we have to add data-testid attribute
+// like <input data-testid="searchInput" />
+// then in test file we can use screen.getByTestId("searchInput")

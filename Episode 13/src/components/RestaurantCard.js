@@ -11,10 +11,12 @@ const RestaurantCard = ({ resData }) => {
     cloudinaryImageId,
   } = resData.info;
 
+  console.log(resData)
+
   const {loggedInUser} = useContext(UserContext);
   console.log(loggedInUser)
   return (
-    <div className="m-4 p-4 w-[250px] bg-gray-200 rounded-lg">
+    <div data-testid="resCard" className="m-4 p-4 w-[250px] bg-gray-200 rounded-lg">
       <img
         className="rounded-lg"
         src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`}

@@ -1,0 +1,83 @@
+{
+    "info": {
+        "id": "74740",
+        "name": "Pizza Hut",
+        "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/9/1/31679893-bf6d-4f64-a71c-f377a8020992_74740.JPG",
+        "locality": "South Bopal",
+        "areaName": "Ambli",
+        "costForTwo": "₹350 for two",
+        "cuisines": [
+            "Pizzas"
+        ],
+        "avgRating": 4.3,
+        "parentId": "721",
+        "avgRatingString": "4.3",
+        "totalRatingsString": "5.7K+",
+        "sla": {
+            "deliveryTime": 20,
+            "lastMileTravel": 2.1,
+            "serviceability": "SERVICEABLE",
+            "slaString": "20-25 mins",
+            "lastMileTravelString": "2.1 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2025-09-10 05:00:00",
+            "opened": true
+        },
+        "badges": {
+            "imageBadges": [
+                {
+                    "imageId": "android/static-assets/icons/big_rx.png",
+                    "description": "bolt!"
+                }
+            ]
+        },
+        "isOpen": true,
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {
+                    "badgeObject": [
+                        {
+                            "attributes": {
+                                "description": "bolt!",
+                                "imageId": "android/static-assets/icons/big_rx.png"
+                            }
+                        }
+                    ]
+                },
+                "textBased": {},
+                "textExtendedBadges": {}
+            }
+        },
+        "aggregatedDiscountInfoV3": {
+            "header": "ITEMS",
+            "subHeader": "AT ₹99"
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {},
+        "externalRatings": {
+            "aggregatedRating": {
+                "rating": "--"
+            }
+        },
+        "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
+        "isPromoted": true
+    },
+    "analytics": {
+        "context": "seo-data-3b31965b-4a29-471b-9ec2-d303c0e07c2f"
+    },
+    "cta": {
+        "link": "https://www.swiggy.com/city/ahmedabad/pizza-hut-south-bopal-ambli-rest74740",
+        "type": "WEBLINK"
+    }
+}
